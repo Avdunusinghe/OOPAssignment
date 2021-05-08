@@ -1,47 +1,52 @@
 package university;
+/*IT20025526
+ * Dunusinghe A.V.
+ * Y1S1 5.2
+ */
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 
 
-public class Student implements Ifaculties{
+public abstract class Student  implements Ifaculties{
 	
+	protected String studentId;
 	protected String name;
 	protected String address;
 	protected String sex;
 	protected int bornYear;
 	protected String specialization;
+	protected  List<Integer> marks = new ArrayList<>();
 	
-	
-	//private static int sid =1000;
-	protected  int[] marks = new int[5];
 
 	
 	
 	public Student() {
+		
 		this.name = "";
 		this.address = "";
 		this.sex = "";
 		this.bornYear = 0;
 		this.specialization = "";
 	}
-
+	
+	@Override
 	public void addMarks(int marks0,int marks1, int marks2, int marks3, int marks4) {
 		
-		marks[0] = marks0;
-		marks[1] = marks1;
-		marks[2] = marks2;
-		marks[3] = marks3;
-		marks[4] = marks4;
+		marks.add(marks0);
+		marks.add(marks1);
+		marks.add(marks2);
+		marks.add(marks3);
+		marks.add(marks4);
 		
 		
 	}
 	
+	@Override
 	public void addDetails(String name, String address, String sex, int bornYear, String specialization, String remark) {
 		
-		
+	    
 		this.name = name;
 		this.address = address;
 		this.sex = sex;
@@ -49,18 +54,6 @@ public class Student implements Ifaculties{
 		this.specialization = specialization;
 		
 		
-	}
-	
-	@Override
-	public String generateID() {
-		
-		Random ramdom = new Random();
-		String id = String.format("IT%04d", ramdom.nextInt(10000));
-		
-		
-		return id;
-		
-			
 	}
 	
 	@Override
@@ -73,5 +66,36 @@ public class Student implements Ifaculties{
 						  + "Student Specialization " + this.specialization);
 		
 	}
+	
+	//genarate id
+	public String genarateId() {
+		
+		try {
+			
+			String id =StudentSupport.generateID("IT");
+			validateId(id);
+			
+			this.studentId = id;
+			
+			
+		}catch(IDInvalidException ex) {
+			
+			System.out.println(ex.getMessage());
+		}
+		return studentId;
+	}
+	
+	
+	private void validateId(String studentId) throws IDInvalidException {
+		
+		String pf = studentId.substring(0,2);
+		if(pf != "IT" && studentId.length() < 6) {
+			
+			
+			throw new IDInvalidException(studentId);
+		}
+	}
+	
+	
 
 }

@@ -1,5 +1,10 @@
 package university;
 
+/*IT20025526
+ * Dunusinghe A.V.
+ * Y1S1 5.2
+ */
+
 public class WeekDay extends Student {
 	
 	private String freeDay;
@@ -10,9 +15,6 @@ public class WeekDay extends Student {
 		this.freeDay = "";
 	}
 	
-	
-
-
 	@Override
 	public void addDetails(String name, String address, String sex, int bornYear, String specialization,
 			String remark) {
@@ -20,10 +22,8 @@ public class WeekDay extends Student {
 		super.addDetails(name, address, sex, bornYear, specialization, remark);
 		this.freeDay = remark;
 	}
-
-
-
-
+	
+	
 	@Override
 	public void showDetails() {
 		super.showDetails();
