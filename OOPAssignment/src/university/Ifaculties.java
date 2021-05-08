@@ -1,9 +1,5 @@
 package university;
 
-/*IT20025526
- * Dunusinghe A.V.
- * Y1S1 5.2
- */
 
 public interface Ifaculties {
 	

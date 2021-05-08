@@ -1,8 +1,4 @@
 package university;
-/*IT20025526
- * Dunusinghe A.V.
- * Y1S1 5.2
- */
 
 import java.util.ArrayList;
 import java.util.List;
@@ -73,6 +69,7 @@ public abstract class Student  implements Ifaculties{
 		try {
 			
 			String id =StudentSupport.generateID("IT");
+			//call validate method
 			validateId(id);
 			
 			this.studentId = id;
@@ -86,6 +83,7 @@ public abstract class Student  implements Ifaculties{
 	}
 	
 	
+	//validate student id
 	private void validateId(String studentId) throws IDInvalidException {
 		
 		String pf = studentId.substring(0,2);
