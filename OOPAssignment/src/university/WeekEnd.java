@@ -32,7 +32,7 @@ public class WeekEnd extends Student{
 	public void showDetails() {
 		
 		super.showDetails();
-		System.out.print("Student Job Title " + this.jobTile);
+		System.out.println("Student Job Title " + this.jobTile);
 	}
 
 }

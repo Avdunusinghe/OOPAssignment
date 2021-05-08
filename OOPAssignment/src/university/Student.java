@@ -1,6 +1,10 @@
 package university;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
+
+
 
 public class Student implements Ifaculties{
 	
@@ -9,11 +13,11 @@ public class Student implements Ifaculties{
 	protected String sex;
 	protected int bornYear;
 	protected String specialization;
-	protected int StudentID;
+	
 	
 	//private static int sid =1000;
-	
-	
+	protected  int[] marks = new int[5];
+
 	
 	
 	public Student() {
@@ -24,9 +28,13 @@ public class Student implements Ifaculties{
 		this.specialization = "";
 	}
 
-	public void addMarks() {
+	public void addMarks(int marks0,int marks1, int marks2, int marks3, int marks4) {
 		
-		//List<Integer> marks = ArrayList<>() 
+		marks[0] = marks0;
+		marks[1] = marks1;
+		marks[2] = marks2;
+		marks[3] = marks3;
+		marks[4] = marks4;
 		
 		
 	}
@@ -44,18 +52,15 @@ public class Student implements Ifaculties{
 	}
 	
 	@Override
-	public String studentID(String ) {
+	public String generateID() {
 		
 		Random ramdom = new Random();
-		String id = String.format("%04d", ramdom.nextInt(10000));
-		System.out.println("Student Id " + "IT"+id);
-	
-	/*String prefix = new String();
-	int prefixid = Integer.parseInt(prefix);
-	
-	this.StudentID = prefixid + sid++;*/
-	//System.out.println(StudentID);
+		String id = String.format("IT%04d", ramdom.nextInt(10000));
 		
+		
+		return id;
+		
+			
 	}
 	
 	@Override

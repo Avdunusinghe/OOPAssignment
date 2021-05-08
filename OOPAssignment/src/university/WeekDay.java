@@ -27,7 +27,7 @@ public class WeekDay extends Student {
 	@Override
 	public void showDetails() {
 		super.showDetails();
-		System.out.print("Student FreeDay " + this.freeDay);
+		System.out.println("Student FreeDay " + this.freeDay);
 	}
 	
 	

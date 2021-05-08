@@ -2,7 +2,7 @@ package university;
 
 public interface Ifaculties {
 	
-    String studentID();
+    String generateID();
 	void showDetails();
 
 }
